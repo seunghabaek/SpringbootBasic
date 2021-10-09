@@ -1,6 +1,7 @@
 package com.hama.book.springboot.domain.posts;
 
 
+import com.hama.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter // lombok - Getter 메소드 자동생성
 @NoArgsConstructor // lombok - 기본 생성자 자동추가, public Posts() {}와 같은 효과
 @Entity // jpa
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // pk field
     @GeneratedValue(strategy = GenerationType.IDENTITY) // pk rule - auto increment
@@ -35,4 +36,6 @@ public class Posts {
         this.title = title;
         this.content = content;
     }
+
+
 }
